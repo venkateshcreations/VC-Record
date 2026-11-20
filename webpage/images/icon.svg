@@ -1,0 +1,87 @@
+<svg viewBox="0 0 512 512" width="512" height="512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background rounded squircle with subtle dark glass sheen for crisp display on any wallpaper -->
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1f30"/>
+      <stop offset="50%" stop-color="#121422"/>
+      <stop offset="100%" stop-color="#0a0c16"/>
+    </linearGradient>
+    <linearGradient id="iconBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ff007f" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7928ca" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- 3D Prism Gradients matching dashboard logo -->
+    <linearGradient id="prismTop" x1="10%" y1="0%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#FFD166"/>
+      <stop offset="30%" stop-color="#FF9E00"/>
+      <stop offset="70%" stop-color="#FF4D6D"/>
+      <stop offset="100%" stop-color="#FF0055"/>
+    </linearGradient>
+
+    <linearGradient id="prismBottom" x1="0%" y1="20%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0055"/>
+      <stop offset="40%" stop-color="#C9184A"/>
+      <stop offset="75%" stop-color="#7209B7"/>
+      <stop offset="100%" stop-color="#3A0CA3"/>
+    </linearGradient>
+
+    <linearGradient id="prismLeft" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FF758F"/>
+      <stop offset="50%" stop-color="#B5179E"/>
+      <stop offset="100%" stop-color="#480CA8"/>
+    </linearGradient>
+
+    <!-- Specular Bevel Line Highlight -->
+    <linearGradient id="ridgeHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="prismGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Frame with Neon Border -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#iconBg)" stroke="url(#iconBorder)" stroke-width="5"/>
+
+  <!-- Ambient Outer Glow -->
+  <path d="M165 130 C145 118 122 132 122 156 V356 C122 380 145 394 165 382 L365 282 C385 270 385 242 365 230 Z"
+        fill="#FF0055" opacity="0.45" filter="url(#prismGlow)" transform="translate(6, 10)"/>
+
+  <!-- Base 3D Play Triangle Outer Shell -->
+  <path d="M165 130 C145 118 122 132 122 156 V356 C122 380 145 394 165 382 L365 282 C385 270 385 242 365 230 Z"
+        fill="url(#prismBottom)"/>
+
+  <!-- Left / Back Folded Face -->
+  <path d="M165 130 C145 118 122 132 122 156 V356 C122 380 145 394 165 382 L248 256 Z"
+        fill="url(#prismLeft)"/>
+
+  <!-- Top Folded Facet -->
+  <path d="M165 130 C145 118 122 132 122 156 V256 L365 256 C365 256 365 242 365 230 L165 130 Z"
+        fill="url(#prismTop)"/>
+
+  <!-- Diagonal Ridge 1 (Center to Right Apex) -->
+  <line x1="248" y1="256" x2="365" y2="256" stroke="url(#ridgeHighlight)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Diagonal Ridge 2 (Center to Top Left) -->
+  <line x1="248" y1="256" x2="165" y2="130" stroke="url(#ridgeHighlight)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Diagonal Ridge 3 (Center to Bottom Left) -->
+  <line x1="248" y1="256" x2="165" y2="382" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Glossy Top Edge Highlight -->
+  <path d="M160 135 L360 235" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Center Inset Lens / Core Play Feature -->
+  <circle cx="220" cy="256" r="32" fill="#0E101A" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="2.5"/>
+  <circle cx="220" cy="256" r="22" fill="#FF0055" fill-opacity="0.25"/>
+  <!-- Glowing Center Pin/Dot -->
+  <circle cx="220" cy="256" r="14" fill="#FFFFFF" fill-opacity="0.95"/>
+  <circle cx="216" cy="252" r="5" fill="#FFFFFF"/>
+</svg>
