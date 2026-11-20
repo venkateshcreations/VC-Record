@@ -93,17 +93,30 @@ export class StorageManager {
       recordingsDir: this.baseDir,
       screenshotsDir: path.join(this.baseDir, 'Screenshots'),
 
-      shortcutStartStop: 'CommandOrControl+Alt+R',
-      shortcutPauseResume: 'CommandOrControl+Alt+P',
-      shortcutScreenshot: 'CommandOrControl+Alt+S',
-      shortcutToggleBar: 'CommandOrControl+Alt+H',
+      shortcutStartStop: 'Ctrl+Alt+R',
+      shortcutPauseResume: 'Ctrl+Alt+P',
+      shortcutScreenshot: 'Ctrl+Alt+S',
+      shortcutToggleBar: 'Ctrl+Alt+H',
     };
 
     try {
       if (fs.existsSync(this.settingsFile)) {
         const raw = fs.readFileSync(this.settingsFile, 'utf8');
         const parsed = JSON.parse(raw);
-        return { ...defaults, ...parsed };
+        const clean = { ...defaults, ...parsed };
+        if (clean.shortcutStartStop) {
+          clean.shortcutStartStop = clean.shortcutStartStop.replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl');
+        }
+        if (clean.shortcutPauseResume) {
+          clean.shortcutPauseResume = clean.shortcutPauseResume.replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl');
+        }
+        if (clean.shortcutScreenshot) {
+          clean.shortcutScreenshot = clean.shortcutScreenshot.replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl');
+        }
+        if (clean.shortcutToggleBar) {
+          clean.shortcutToggleBar = clean.shortcutToggleBar.replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl');
+        }
+        return clean;
       }
     } catch (e) {
       console.warn('Could not read settings file, using defaults');

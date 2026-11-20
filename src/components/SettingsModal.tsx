@@ -466,7 +466,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       <span className="text-[11px] text-gray-400">Quick toggle screen recording</span>
                     </div>
                     <kbd className="px-2.5 py-1 bg-[#2a2a2a] text-gray-300 border border-white/10 rounded-lg text-xs font-mono">
-                      {settings.shortcutStartStop || 'Ctrl+Alt+R'}
+                      {(settings.shortcutStartStop || 'Ctrl+Alt+R').replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl')}
                     </kbd>
                   </div>
 
@@ -476,7 +476,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       <span className="text-[11px] text-gray-400">Temporarily halt recording</span>
                     </div>
                     <kbd className="px-2.5 py-1 bg-[#2a2a2a] text-gray-300 border border-white/10 rounded-lg text-xs font-mono">
-                      {settings.shortcutPauseResume || 'Ctrl+Alt+P'}
+                      {(settings.shortcutPauseResume || 'Ctrl+Alt+P').replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl')}
                     </kbd>
                   </div>
 
@@ -486,7 +486,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
                       <span className="text-[11px] text-gray-400">Instantly grab screen</span>
                     </div>
                     <kbd className="px-2.5 py-1 bg-[#2a2a2a] text-gray-300 border border-white/10 rounded-lg text-xs font-mono">
-                      {settings.shortcutScreenshot || 'Ctrl+Alt+S'}
+                      {(settings.shortcutScreenshot || 'Ctrl+Alt+S').replace(/CommandOrControl/gi, 'Ctrl').replace(/Command/gi, 'Ctrl')}
                     </kbd>
                   </div>
                 </div>

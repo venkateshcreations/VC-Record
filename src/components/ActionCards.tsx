@@ -17,6 +17,10 @@ export const ActionCards: React.FC<ActionCardsProps> = ({
   onScreenshot,
   shortcutScreen = 'Ctrl+Alt+R',
 }) => {
+  const displayShortcut = (shortcutScreen || 'Ctrl+Alt+R')
+    .replace(/CommandOrControl/gi, 'Ctrl')
+    .replace(/Command/gi, 'Ctrl');
+
   return (
     <div className="grid grid-cols-4 gap-4 px-6 pt-5 pb-3">
       {/* 1. Record Screen */}
@@ -40,7 +44,7 @@ export const ActionCards: React.FC<ActionCardsProps> = ({
               Record Screen
             </h3>
             <span className="text-gray-400 text-[11px] font-mono mt-0.5 tracking-wide">
-              {shortcutScreen}
+              {displayShortcut}
             </span>
           </div>
 
