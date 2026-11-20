@@ -142,12 +142,10 @@ Generated binaries will be located in the `release/` directory:
 
 ---
 
-## 👨‍💻 Creator & Architecture
+## 👨‍💻 Creator & Author
 
 **Venkatesh Ammireddy**  
-* **Role**: Creative UX Director | AI-Native UX Senior Architect  
-* **Portfolio**: [https://venkateshcreations.github.io/portfolio/](https://venkateshcreations.github.io/portfolio/)  
-* **GitHub**: [@venkateshcreations](https://github.com/venkateshcreations)  
+* Portfolio: [https://venkateshcreations.github.io/portfolio/](https://venkateshcreations.github.io/portfolio/)  
 
 ---
 
